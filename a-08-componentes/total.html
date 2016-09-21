@@ -1,0 +1,12 @@
+<section name="total">
+	<ab-cabecera>
+		<mensaje>Comprueba de dónde viene y a dónde va tu dinero.</mensaje>
+	</ab-cabecera>
+	<div class="row-fluid">
+		<div class="row placeholders" ng-init="totalIngresos='Total Ingresos'">
+			<ab-contador valor="caja.total.ingresos" texto="{{totalIngresos}}"></ab-contador>
+			<ab-contador valor="caja.total.gastos" texto="Total gastos"></ab-contador>
+			<ab-contador valor="caja.total.ingresos - caja.total.gastos" texto="Balance"></ab-contador>
+		</div>
+	</div>
+</section>

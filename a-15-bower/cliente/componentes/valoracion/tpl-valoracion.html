@@ -1,0 +1,6 @@
+<span ng-repeat="estrella in $ctrl.estrellas">
+<md-button class=" md-mini md-icon-button md-primary" ng-click="$ctrl.marcar($index)" >
+    <md-icon ng-if="estrella.marcada">star</md-icon>
+    <md-icon ng-if="!estrella.marcada">star_border</md-icon>
+</md-button>  
+</span>

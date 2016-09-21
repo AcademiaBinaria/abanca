@@ -1,0 +1,12 @@
+
+<md-toolbar layout="row" class="md-primary md-toolbar-tools">
+    <md-button ui-sref="total"  style="padding-bottom:0px; padding-right:10px;" ng-class="{'md-warn': $ctrl.soyElEstadoActivo('total') }">
+        <md-icon  >account_balance_wallet</md-icon>Totales
+    </md-button>
+    <md-button ui-sref="nuevo"  style="padding-bottom:0px; padding-right:10px;" ng-class="{'md-warn': $ctrl.soyElEstadoActivo('nuevo') }">
+        <md-icon>create</md-icon>Nuevo
+    </md-button>
+    <md-button ui-sref="lista"  style="padding-bottom:0px; padding-right:10px;" ng-class="{'md-warn': $ctrl.soyElEstadoActivo('lista') }">
+        <md-icon >list</md-icon>Lista
+    </md-button>
+</md-toolbar>

@@ -1,0 +1,31 @@
+<section name="registro" layout="column">
+    <ab-cabecera>
+        <mensaje>
+            Regístrate o identifícate
+        </mensaje>
+    </ab-cabecera>
+    <form>
+        <fieldset>
+            <div layout="column">
+                <div layout="column">
+                    <md-input-container>
+                        <label>Email</label>
+                        <input type="email" ng-model="$ctrl.nuevoMovimiento.email">
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Password</label>
+                        <input type="password" ng-model="$ctrl.nuevoMovimiento.password">
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row" layout-align="end center">
+                <md-button class="md-primary" ng-click="$ctrl.entrar()">
+                    <span>Entrar</span>
+                </md-button>
+                 <md-button class="md-secondary" ng-click="$ctrl.registrar()">
+                    <span>Registro</span>
+                </md-button>
+            </div>
+        </fieldset>
+    </form>
+</section>

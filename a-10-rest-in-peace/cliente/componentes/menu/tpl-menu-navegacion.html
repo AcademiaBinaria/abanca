@@ -1,0 +1,18 @@
+<!--Se elimina la referencia al controlador, y se establece desde la directiva-->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="navbar-inner">
+		<div class="container">
+			<ul class="nav navbar-nav">
+				<li ng-class="{ active: $ctrl.isActive('total') }">
+					<a ui-sref="total">Totales</a>
+				</li>
+				<li ng-class="{ active: $ctrl.isActive('nuevo') }">
+					<a ui-sref="nuevo">Nuevo</a>
+				</li>
+				<li ng-class="{ active: $ctrl.isActive('lista') }">
+					<a ui-sref="lista">Lista</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

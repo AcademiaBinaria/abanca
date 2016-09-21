@@ -1,0 +1,12 @@
+<md-button 
+ng-class="{'md-primary': $ctrl.texto=='Total ingresos' || ($ctrl.texto=='Balance' && $ctrl.valor>=0) , 'md-warn' : $ctrl.texto=='Total gastos' || ($ctrl.texto=='Balance' && $ctrl.valor<0)}">
+    <p>{{ $ctrl.valor | number:2 }} €</p>
+    <p>
+        <md-icon ng-if="$ctrl.texto=='Total ingresos'">add_circle_outline</md-icon>
+        <md-icon ng-if="$ctrl.texto=='Total gastos'">remove_circle_outline</md-icon>
+        <md-icon ng-if="$ctrl.texto=='Balance'">account_balance_wallet</md-icon>
+        {{$ctrl.texto}}
+    </p>
+</md-button>
+
+

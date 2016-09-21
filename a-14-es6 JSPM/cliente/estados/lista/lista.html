@@ -1,0 +1,32 @@
+<section name="Lista">
+    <ab-cabecera>
+        <mensaje>
+            Estos son tus movimientos recientes
+        </mensaje>
+    </ab-cabecera>
+    <br>
+    <md-input-container>
+        <label>Filtrar</label>
+        <input type="text" placeholder="qué buscas?" ng-model="$ctrl.valorBuscado">
+    </md-input-container>
+    <md-button class="md-primary" ng-click="$ctrl.valorCorte=0">Ver todos los movimientos</md-button>
+    <md-button class="md-accent" ng-click="$ctrl.valorCorte=1000">Sólo grandes movimientos</md-button>
+    <br>
+    <md-button ng-click="$ctrl.campo = 'fecha'; $ctrl.sentido = !$ctrl.sentido "><md-icon>swap_vert</md-icon>Ordenar por Fecha</md-button>
+    <md-button ng-click="$ctrl.campo = 'importe'; $ctrl.sentido = !$ctrl.sentido "><md-icon>swap_vert</md-icon>Ordenar por Importe</md-button>
+
+    <md-list>
+        <md-list-item class="md-1-line" ng-repeat="movimiento in $ctrl.movimientos  | filter:$ctrl.valorBuscado | abGranImporte:$ctrl.valorCorte | orderBy:$ctrl.campo:$ctrl.sentido">
+            <md-icon ng-if="movimiento.esIngreso" class="md-primary" flex="5">add_circle_outline</md-icon>
+            <md-icon ng-if="movimiento.esGasto" class="md-warn" flex="5">remove_circle_outline</md-icon>
+            <span flex="15">{{movimiento.fecha | date}}</span>
+            <span flex="10">{{movimiento.categoria}}</span>
+            <span flex="30" >
+                {{movimiento.importe | number:2}} €
+            </span>
+            <span flex="40">
+                <ab-valoracion valor="$movimiento.valoracion" max="5" solo-lectura="true"></ab-valoracion>
+            </span>
+        </md-list-item>
+    </md-list>
+</section>

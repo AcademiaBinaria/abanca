@@ -1,0 +1,11 @@
+<!--plantilla de una directiva. accede a un alias-->
+<td class="text-left">{{movimiento.fecha | date}}</td>
+<td class="text-left">{{movimiento.tipo}}</td>
+<td class="text-left">{{movimiento.categoria}}</td>
+<td class="text-left" ng-class="{'text-success': movimiento.tipo=='Ingreso', 'text-danger' : movimiento.tipo=='Gasto'}">
+	{{movimiento.importe | number:2}} €
+</td>
+<td class="text-left">
+	<!--Uso de la directiva abValoracion para mostrar las estrellas en modo solo lectura-->
+	<ab-valoracion valor="movimiento.valoracion" max="10" solo-lectura="true"></ab-valoracion>
+</td>

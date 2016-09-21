@@ -1,0 +1,43 @@
+<html lang="es" ng-app="cashFlow">
+
+<head>
+	<title>Control de Caja</title>
+	<meta charset="utf-8" />
+	<meta lang="es" />
+	<meta name="description" content="Ejemplo Control de Caja en AngularJS por Alberto Basalo" />
+	<meta name="author" content="Alberto Basalo @ Ágora Binaria" />
+	<meta name="application-name" content="ControlAngularJS" />
+	<meta name="Keywords" content="AngularJS, ejemplo, tutorial, curso" />
+	<link rel="author" href="https://plus.google.com/+AlbertoBasalo71" />
+	<!-- Bootstrap core CSS -->
+	<link href="refs/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<ab-menu-navegacion></ab-menu-navegacion>
+
+	<ab-contenido></ab-contenido>
+
+	<ab-firma year="2016">
+		<autor>Alberto Basalo</autor>
+		<empresa>
+			<a href="http://agorabinaria.com">Ágora Binaria S.L.</a>
+		</empresa>
+	</ab-firma>
+
+	<!-- JavaScript References -->
+	<script src="./refs/angular.min.js"></script>
+	<script src="./refs/angular-ui-router.min.js"></script>
+	<script src="app.js"></script>
+	<script src="menuCtrl.js"></script>
+	<script src="cajaCtrl.js"></script>
+	<script src="maestrosService.js"></script>
+	<script src="movimientosService.js"></script>
+	<script src="filtros.js"></script>
+	<!-- Ficheros de componentes y transclusiones. Todos van en el mismo módulo -->
+	<script src="componentes.js"></script>
+	<script src="transclusiones.js"></script>
+	<script src="valoracion.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<section name="nuevoMovimiento" layout="column" >
+    <ab-cabecera>
+        <mensaje>
+            Introduce tus movimientos
+        </mensaje>
+    </ab-cabecera>
+    <form >
+        <fieldset layout="column" layout-padding>
+                <div layout="row"  >
+                    <md-input-container flex="50">
+                        <md-button class="md-primary " ng-class="{'md-raised':$ctrl.nuevoMovimiento.esIngreso}" ng-click="$ctrl.nuevoMovimiento.esIngreso=1; $ctrl.nuevoMovimiento.esGasto=0">
+                            + Ingreso
+                        </md-button>
+                        <md-button class="md-warn" ng-class="{'md-raised':$ctrl.nuevoMovimiento.esGasto}" ng-click="$ctrl.nuevoMovimiento.esIngreso=0; $ctrl.nuevoMovimiento.esGasto=1">
+                            - Gasto
+                        </md-button>
+                    </md-input-container>
+                    <md-input-container ng-if="$ctrl.nuevoMovimiento.esIngreso" flex="50">
+                        <label>Categoría</label>
+                        <md-select ng-model="$ctrl.nuevoMovimiento.categoria">
+                            <md-option ng-value="opt" ng-repeat="opt in $ctrl.maestros.categoriasIngresos">{{ opt }}</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container ng-if="$ctrl.nuevoMovimiento.esGasto" flex="50">
+                        <label>Categoría</label>
+                        <md-select ng-model="$ctrl.nuevoMovimiento.categoria">
+                            <md-option ng-value="opt" ng-repeat="opt in $ctrl.maestros.categoriasGastos">{{ opt }}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div layout="row" >
+                    <md-input-container  flex="50">
+                        <label>Fecha</label>
+                        <input type="date" ng-model="$ctrl.nuevoMovimiento.fecha">
+                    </md-input-container>
+                    <md-input-container  flex="50">
+                        <label>Importe</label>
+                        <input type="number" ng-model="$ctrl.nuevoMovimiento.importe">
+                    </md-input-container>
+                </div>
+                <div layout="column">
+                    <md-input-container>
+                        <label>Texto</label>
+                        <input type="text" ng-model="$ctrl.nuevoMovimiento.texto">
+                    </md-input-container>
+                    <div layout="column">
+                        <label>Valoración</label>
+                        <ab-valoracion valor="$ctrl.nuevoMovimiento.valoracion" max="5" solo-lectura="false"></ab-valoracion>
+                    </div>
+                </div>
+                <div layout="row" layout-align="end center">
+                    <md-button class="md-primary" ng-click="$ctrl.guardarMovimiento()">
+                        <span>Guardar</span>
+                    </md-button>
+                </div>
+        </fieldset>
+    </form>
+</section>

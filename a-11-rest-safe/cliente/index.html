@@ -1,0 +1,51 @@
+<html lang="es" ng-app="cashFlow">
+
+<head>
+	<title>Control de Caja</title>
+	<meta charset="utf-8" />
+	<meta lang="es" />
+	<meta name="description" content="Ejemplo Control de Caja en AngularJS por Alberto Basalo" />
+	<meta name="author" content="Alberto Basalo @ Ágora Binaria" />
+	<meta name="application-name" content="ControlAngularJS" />
+	<meta name="Keywords" content="AngularJS, ejemplo, tutorial, curso" />
+	<link rel="author" href="https://plus.google.com/+AlbertoBasalo71" />
+	<!-- Bootstrap core CSS -->
+	<link href="refs/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<ab-menu-navegacion></ab-menu-navegacion>
+
+	<ab-contenido></ab-contenido>
+
+	<ab-firma>
+		<autor>Alberto Basalo</autor>
+		<empresa>
+			<a href="http://agorabinaria.com">Ágora Binaria S.L.</a>
+		</empresa>
+	</ab-firma>
+	<br> {{mensaje}} - {{usuario}}
+
+	<!-- JavaScript References -->
+	<script src="./refs/angular.min.js"></script>
+	<script src="./refs/angular-cookies.min.js"></script>
+	<script src="./refs/angular-ui-router.min.js"></script>
+	<script src="app.js"></script>
+	<script src="config.js"></script>
+	<!-- Atención a los cambios de rutas -->
+	<script src="./estados/estados.js"></script>
+	<script src="./estados/total/total.js"></script>
+	<script src="./estados/nuevo/nuevo.js"></script>
+	<script src="./estados/lista/lista.js"></script>
+	<script src="./estados/registro/registro.js"></script>
+	<script src="./servicios/servicios.js"></script>
+	<script src="./servicios/maestrosService.js"></script>
+	<script src="./servicios/movimientosService.js"></script>
+	<script src="./filtros/filtros.js"></script>
+	<script src="./componentes/componentes.js"></script>
+	<script src="./componentes/menu/menu.js"></script>
+	<script src="./componentes/transclusiones.js"></script>
+	<script src="./componentes/valoracion/valoracion.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<html lang="es" ng-app="cashFlow">
+<!--Distribuimos el contenido en tres vistas parciales y un archivo índice (este mismo)
+Cada vista será una 'página' con urls independientes -->
+
+<head>
+	<title>Control de Caja</title>
+	<meta charset="utf-8" />
+	<meta lang="es" />
+	<meta name="description" content="Ejemplo Control de Caja en AngularJS por Alberto Basalo" />
+	<meta name="author" content="Alberto Basalo @ Ágora Binaria" />
+	<meta name="application-name" content="ControlAngularJS" />
+	<meta name="Keywords" content="AngularJS, ejemplo, tutorial, curso" />
+	<link rel="author" href="https://plus.google.com/+AlbertoBasalo71" />
+	<!-- Bootstrap core CSS -->
+	<link href="refs/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<!-- Se crea un menú de navegación -->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="MenuCtrl as menu">
+		<div class="navbar-inner">
+			<div class="container">
+				<ul class="nav navbar-nav">
+					<li ng-class="{ active: menu.soyLaRutaActiva('/') }">
+						<a href="#/">Totales</a>
+					</li>
+					<li ng-class="{ active: menu.soyLaRutaActiva('/nuevo') }">
+						<a href="#/nuevo">Nuevo</a>
+					</li>
+					<li ng-class="{ active: menu.soyLaRutaActiva('/lista') }">
+						<a href="#/lista">Lista</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- El contenido principal se cargará dinámicamente -->
+	<!-- De eso se encarga la directiva ng-view en complot con el ng-router -->
+	<!-- Sólo puede haber un ng-view por página-->
+	<div class="container text-center" style="padding-top:50px;" ng-view>
+		<!-- Aquí irá el contenido dinámico -->
+		<!-- Puede ser todo lo complejo que se quiera-->
+	</div>
+
+
+
+	<!-- JavaScript References -->
+	<script src="./refs/angular.min.js"></script>
+	<!-- Referencia a Angular Route que contiene el módulo ngRoute -->
+	<!-- Suelen seguir un patrón de nombrado -->
+	<!-- angular-nombre-modulo.min.js para el fichero-->
+	<!-- y ngNombreModulo para el módulo-->
+	<script src="./refs/angular-route.min.js"></script>
+
+	<!-- Las vistas parciales no es necesario refrenciarlas en el html -->
+	<script src="app.js"></script>
+	<script src="menuCtrl.js"></script>
+	<script src="cajaCtrl.js"></script>
+</body>
+
+</html>

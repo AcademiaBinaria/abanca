@@ -1,0 +1,10 @@
+<td class="text-left">{{$ctrl.movimiento.fecha | date}}</td>
+<td class="text-left">{{$ctrl.movimiento.tipo}}</td>
+<td class="text-left">{{$ctrl.movimiento.categoria}}</td>
+<td class="text-left" ng-class="{'text-success': $ctrl.movimiento.tipo=='Ingreso', 'text-danger' : $ctrl.movimiento.tipo=='Gasto'}">
+	{{$ctrl.movimiento.importe | number:2}} €
+</td>
+<td class="text-left">
+	<!--Uso de la directiva abValoracion para mostrar las estrellas en modo solo lectura-->
+	<ab-valoracion valor="$ctrl.movimiento.valoracion" max="10" solo-lectura="true"></ab-valoracion>
+</td>

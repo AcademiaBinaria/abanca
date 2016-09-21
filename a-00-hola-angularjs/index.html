@@ -1,0 +1,43 @@
+<!--Directiva ng-app para indicarle a AngularJS que debe ejecutarse sobre este documento-->
+<html ng-app>
+
+<head>
+	<title>Hola AngularJS</title>
+	<meta charset="utf-8" />
+	<meta lang="es" />
+	<meta name="description" content="Tutorial simple Hola Mundo en AngularJS por Alberto Basalo" />
+	<meta name="author" content="Alberto Basalo @ Ágora Binaria" />
+	<meta name="application-name" content="HolaAngularJS" />
+	<meta name="Keywords" content="AngularJS, ejemplo, tutorial, curso, ng-app" />
+	<link rel="author" href="https://twitter.com/albertobasalo" />
+</head>
+
+<body class="container-fluid">
+	<header>
+		<h1>Hola Mundo AngularJS</h1>
+	</header>
+	<section>
+		<div>
+			<span>¿Cómo te llamas? : </span>
+			<input ng-model="tuNombre">
+			<!--Directiva ng-model para enlazar la vista con una propiedad del modelo-->
+		</div>
+		<br/>
+		<!--Interpolación en el contenido de una expresión {{entre llaves}} que usa una propiedadad del modelo-->
+		<div class="text-info">Hola {{ tuNombre }}, bienvenido al mundo de AngularJS !!!</div>
+		<!--Multiples Directivas ng-model para enlazar la vista con una o varias propiedades del modelo-->
+		<input ng-model="numero1" placeholder="número 1">
+		<input ng-model="numero2" placeholder="número 2">
+		<input ng-model="numero2" placeholder="número 2">
+		<h2>numero1 * numero2 es {{ numero1 * numero2}} </h2>
+	</section>
+	<footer>
+		<hr>
+		<p>Código de ejemplo creado por <a href="https://twitter.com/albertobasalo">Alberto Basalo</a> de <a href="http://agorabinaria.com">Ágora Binaria</a></p>
+		<p>Accede a este y otros contenidos formativos en <a href="https://github.com/AcademiaBinaria">GitHub-AcademiaBinaria</a></p>
+	</footer>
+	<!-- Enlace al CDN de Google para descargar una versión minimizada de AngularJS-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+</body>
+
+</html>

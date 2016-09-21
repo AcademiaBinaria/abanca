@@ -1,0 +1,8 @@
+<span ng-repeat="estrella in $ctrl.estrellas" ng-click="$ctrl.marcar($index)">
+        <span class="lead"
+                ng-class=
+                "{'text-danger h3': estrella.marcada,
+                'text-muted small': !estrella.marcada}">
+                <b><u>*</u></b>
+        </span>
+</span>

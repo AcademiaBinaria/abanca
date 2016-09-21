@@ -1,0 +1,52 @@
+<html lang="es" ng-app="cashFlow">
+
+<head>
+	<title>Control de Caja</title>
+	<meta charset="utf-8" />
+	<meta lang="es" />
+	<meta name="description" content="Ejemplo Control de Caja en AngularJS por Alberto Basalo" />
+	<meta name="author" content="Alberto Basalo @ Ágora Binaria" />
+	<meta name="application-name" content="ControlAngularJS" />
+	<meta name="Keywords" content="AngularJS, ejemplo, tutorial, curso" />
+	<link rel="author" href="https://plus.google.com/+AlbertoBasalo71" />
+	<link href="refs/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="MenuCtrl as menu">
+		<div class="navbar-inner">
+			<div class="container">
+				<ul class="nav navbar-nav">
+					<li ng-class="{ active: menu.soyElEstadoActivo('total') }">
+						<!-- Los enlaces se formulan como estado, con ui-sref -->
+						<!-- Estos estados generan rutas, según la configuración -->
+						<!-- Pero internamente siempre trabajamos con estados -->
+						<a ui-sref="total">Totales</a>
+					</li>
+					<li ng-class="{ active: menu.soyElEstadoActivo('nuevo') }">
+						<a ui-sref="nuevo">Nuevo</a>
+					</li>
+					<li ng-class="{ active: menu.soyElEstadoActivo('lista') }">
+						<a ui-sref="lista">Lista</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- La directiva de ui-router es... ui-view-->
+	<div class="container text-center" style="padding-top:50px;" ui-view>
+		<!-- En este caso podríamos tener varias vista a la vez-->
+		<!-- Incluso estados anidados unos dentro de otros-->
+	</div>
+	<!-- JavaScript References -->
+	<script src="./refs/angular.min.js"></script>
+	<!-- En lugar del enrutador de AngularJS, usaremos uno de terceros, llamado ui-router-->
+	<script src="./refs/angular-ui-router.min.js"></script>
+	<script src="app.js"></script>
+	<script src="menuCtrl.js"></script>
+	<script src="cajaCtrl.js"></script>
+	<script src="maestrosService.js"></script>
+	<script src="movimientosService.js"></script>
+</body>
+
+</html>

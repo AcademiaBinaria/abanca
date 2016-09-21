@@ -1,0 +1,45 @@
+<section name="Lista">
+	<ab-cabecera>
+		<mensaje>
+			Estos son tus movimientos recientes
+		</mensaje>
+	</ab-cabecera>
+	<br>
+	<label class="control-label" for="importe">Filtrar:</label>
+	<input type="text" name="filtro" placeholder="qué buscas?" class="input" ng-model="valorBuscado">
+	<button class="btn-primary" ng-click="caja.valorCorte=0">Ver todos los movimientos</button>
+	<button class="btn-danger" ng-click="caja.valorCorte=1000">Sólo grandes movimientos</button>
+	<table class="table">
+		<thead>
+			<tr>
+				<th><a href="" ng-click="campo = 'fecha'; sentido = !sentido ">Fecha</a>
+				</th>
+				<th>Tipo</th>
+				<th>Categoría</th>
+				<th><a href="" ng-click="campo = 'importe'; sentido = !sentido ">Importe</a>
+				</th>
+				<th>Valoración</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- No encaja el uso de un elemento dentro de un tr -->
+			<tr ng-repeat="movimiento in caja.movimientos">
+			 <ab-fila-movimiento movimiento="movimiento"></ab-fila-movimiento>
+            </tr>
+			<!--Se necesita usar el componente como un atributo. Para eso están las viejas directivas-->
+			<tr ng-repeat="movimiento in caja.movimientos" ab-fila-movimiento2 movimiento="movimiento">
+				<!-- El componente abFilaMovimiento recibe un parámetro vía atributos
+				los nombres de las variables pueden ser distintos a nivel de cliente, directiva y plantilla-->
+			</tr>
+		</tbody>
+	</table>
+	<hr>
+	<!--Otros ejemplos con divs-->
+	<div ng-repeat="movimiento in caja.movimientos">
+		<ab-fila-movimiento movimiento="movimiento"></ab-fila-movimiento>
+	</div>
+	<hr>
+	<ab-fila-movimiento ng-repeat="movimiento in caja.movimientos" movimiento="movimiento"></ab-fila-movimiento>
+    <hr>
+    {{caja.movimientos}}
+</section>
